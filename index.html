@@ -9,7 +9,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         .dropdown:hover .drop {
@@ -30,19 +31,19 @@
             position: relative;
         }
 
-        .carousel-control-prev,
-        .carousel-control-next {
+        .btt,
+        .btt1 {
             top: auto;
             bottom: 20px;
             width: auto;
         }
 
-        .carousel-control-prev {
+        .btt {
             left: auto;
             right: 130px;
         }
 
-        .carousel-control-next {
+        .btt1 {
             right: 20px;
         }
 
@@ -50,8 +51,63 @@
             overflow: visible !important;
         }
 
+        .cure,
+        .cure1 {
+            top: auto;
+            bottom: 20px;
+            width: auto;
+        }
+
+        .cure {
+            left: auto;
+            right: 80px;
+        }
+
+        .cure1 {
+            right: 20px;
+        }
+
+        .buddy {
+            background-color: #FCFBF9;
+            font-size: 14px;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper {
+            width: 92%;
+            overflow: hidden;
+            height: auto;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
 
         @media (max-width: 991px) {
+            .nav2 {
+                display: none !important;
+            }
+
             .tp-black {
                 font-size: 13px;
             }
@@ -65,16 +121,16 @@
                 visibility: visible !important;
             }
 
-            .carousel-inner .ititi  {
-                height: 60vh;
+            .carousel-inner .ititi {
+                height: 65vh;
             }
 
             body .carousel .carousel-inner .carousel-item {
                 overflow: visible !important;
             }
 
-            .btt .carousel-control-prev,
-            .btt .carousel-control-next {
+            .btt,
+            .btt1 {
                 display: none !important;
             }
 
@@ -82,8 +138,8 @@
                 top: auto;
                 left: 50%;
                 transform: translate(-50%);
-                margin-bottom: -20px;
-                position: absolute;
+                margin-bottom: -10px;
+                position: absolute !important;
                 width: 400px !important;
                 padding-left: 30px !important;
                 overflow: visible !important;
@@ -672,8 +728,8 @@
     </nav>
 
 
-
-    <nav class="navbar navbar-expand-lg py-3 mt-0 w-100" style="background-color: #FCFBF9;">
+    <!-- Navbar Slider -->
+    <nav class="navbar navbar-expand-lg py-3 mt-0 w-100 nav2" style="background-color: #FCFBF9;">
         <div class=" container-fluid p">
             <ul
                 class="drip navbar-nav me-auto mb-2 mb-lg-0 gap-4 d-flex flex-row flex-wrap justify-content-start align-items-center px-4">
@@ -1032,6 +1088,17 @@
 
     <!-- Hero section -->
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators" style="position: absolute !important; bottom: -45px !important;">
+            <button type="button" data-bs-target="#carouselExampleIndicators"
+                style="background-color: black; width: 9px; height: 9px; border-radius: 50%;" data-bs-slide-to="0"
+                class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators"
+                style="background-color: black; width: 9px; height: 9px; border-radius: 50%;" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators"
+                style="background-color: black; width: 9px; height: 9px; border-radius: 50%;" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="images/hp-hero-slide3-09222025-large-v2.jpg" class="d-block w-100 ititi" alt="...">
@@ -1039,7 +1106,8 @@
                     style="width: 600px; height: 200px;">
                     <p class="text-dark fs-1 fw-semibold">ART TO INSPIRE</p>
                     <h6 class="text-dark fs-5 fw-light mb-3">Find Art That Sparks Creativity in Our Chief Curator's
-                        Picks</h6>
+                        Picks
+                    </h6>
                     <button class="btn btn-outline-dark border-end-0 border-start-0 border-top-0 fw-semibold">START YOUR
                         SEARCH</button>
                 </div>
@@ -1066,13 +1134,15 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev bg-white rounded-pill d-flex align-self-center justify-content-center ms-5 btt"
+        <button
+            class="carousel-control-prev bg-white rounded-pill d-flex align-self-center justify-content-center ms-5 btt"
             type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="width: 50px; height: 50px;">
             <i class="bi bi-chevron-left fs-2 text-dark"></i>
             <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next bg-white rounded-pill d-flex align-self-center justify-content-center me-5 btt"
+        <button
+            class="carousel-control-next bg-white rounded-pill d-flex align-self-center justify-content-center me-5 btt1"
             type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="width: 50px; height: 50px;">
             <i class="bi bi-chevron-right fs-2 text-dark"></i>
             <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
@@ -1098,28 +1168,28 @@
     <div class="w-100 vh-auto py-5 card1" style="background-color: #FCFBF9;">
         <p class="fs-1 fw-semibold text-center">Experience the Joy of Living with Original Art</p>
         <div class="d-flex justify-content-center gap-3 col-12 col-md-12 col-sm-12 flex-wrap">
-            <div class="card" style="width: 19rem; height: 400px;">
+            <div class="card" style="width: 17rem; height: 380px;">
                 <img src="images/hp-toptile1-09122025-large.jpg" class="card-img-top" alt="...">
                 <div class="card-body mx-0">
                     <h5 class="card-title">Find Your Art Style</h5>
                     <a href="#" class="btn text-decoration-underline" style="margin-left: -10px;">TAKE OUR QUIZ</a>
                 </div>
             </div>
-            <div class="card" style="width: 19rem; height: 400px;">
+            <div class="card" style="width: 17rem; height: 380px;">
                 <img src="images/hp-toptile2-09122025-large.jpg" class="card-img-top" alt="...">
                 <div class="card-body mx-0">
                     <h5 class="card-title">Refresh Your Space</h5>
                     <a href="#" class="btn text-decoration-underline" style="margin-left: -10px;">SHOP BY ROOM</a>
                 </div>
             </div>
-            <div class="card" style="width: 19rem; height: 400px;">
+            <div class="card" style="width: 17rem; height: 380px;">
                 <img src="images/hp-toptile3-09122025-large.jpg" class="card-img-top" alt="...">
                 <div class="card-body mx-0">
                     <h5 class="card-title">Mark Life Moments</h5>
                     <a href="#" class="btn text-decoration-underline" style="margin-left: -10px;">CELEBRATE WITH ART</a>
                 </div>
             </div>
-            <div class="card" style="width: 19rem; height: 400px;">
+            <div class="card" style="width: 17rem; height: 380px;">
                 <img src="images/hp-toptile4-09122025-large.jpg" class="card-img-top" alt="...">
                 <div class="card-body mx-0">
                     <h5 class="card-title">Make a Statement</h5>
@@ -1133,7 +1203,7 @@
     <!-- Category -->
     <div class="">
         <!-- Category heading -->
-        <div class="cat d-flex w-100 justify-content-center vh-auto gap-5 align-items-center"
+        <div class="cat d-flex w-100 justify-content-center vh-auto gap-5 align-items-center py-3"
             style="background-color: #FCFBF9;">
             <p class="fs-4 d-flex align-items-center">Shop by Category</p>
             <div class="d-flex gap-3 align-items-center flex-wrap justify-content-center">
@@ -1147,16 +1217,19 @@
                     PAINTINGS</button>
             </div>
         </div>
+        <div class="d-flex w-100 py-3 align-items-center" style="background-color: #FCFBF9;">
+            <p class="fs-3 ms-5 d-flex align-items-center fw-semibold">Curators Picks</p>
 
+        </div>
         <!-- Category body -->
-        <div class="w-100" style="background-color: #FCFBF9;">
+        <div class="w-100 py-5" style="background-color: #FCFBF9;">
             <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
 
                     <!-- Slide 1 -->
                     <div class="carousel-item active">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
-                            <div class="card" style="width: 19rem;">
+                        <div class="d-flex justify-content-center gap-3">
+                            <div class="card " style="width: 19rem;">
                                 <img src="images/hp-featuredcollection-BestofSummer-07172025-large.jpg"
                                     class="card-img-top" alt="">
                                 <div class="card-body">
@@ -1175,12 +1248,19 @@
                                     <h5 class="card-title">Featured Sculptures</h5>
                                 </div>
                             </div>
+                            <div class="card d-none d-xl-block" style="width: 19rem;">
+                                <img src="images/hp-new-featuredcollection-affordablephotography-07172025-large.jpg"
+                                    class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">Budget Friendly Photography</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Slide 2 -->
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <div class="d-flex justify-content-center gap-3">
                             <div class="card" style="width: 19rem;">
                                 <img src="images/hp-featuredcollection-powerfulportraits-07172025-large.jpg"
                                     class="card-img-top" alt="">
@@ -1202,24 +1282,591 @@
                                     <h5 class="card-title">Budget Friendly Photography</h5>
                                 </div>
                             </div>
+                            <div class="card d-none d-xl-block" style="width: 19rem;">
+                                <img src="images/hp-featuredcollection1-09032025-large.jpg" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">Featured Sculptures</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Controls -->
-                <button class="carousel-control-prev rounded-pill" type="button" data-bs-target="#cardCarousel"
-                    data-bs-slide="prev" style="background-color: black; width: 50px; height: 50px;">
-                    <span class="carousel-control-prev-icon"></span>
+                <button class="carousel-control-prev rounded-pill d-flex align-items-center justify-content-center cure"
+                    type="button" data-bs-target="#cardCarousel" data-bs-slide="prev"
+                    style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -115px">
+                    <span class="carousel-control-prev-icon">
+                        <i class="bi bi-chevron-left fs-5 text-black"></i>
+                    </span>
                 </button>
-                <button class="carousel-control-next rounded-pill" type="button" data-bs-target="#cardCarousel"
-                    data-bs-slide="next" style="background-color: black; width: 50px; height: 50px;">
-                    <span class="carousel-control-next-icon"></span>
+                <button
+                    class="carousel-control-next rounded-pill cd-flex align-items-center justify-content-center cure1"
+                    type="button" data-bs-target="#cardCarousel" data-bs-slide="next"
+                    style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -115px">
+                    <span class="carousel-control-next-icon">
+                        <i class="bi bi-chevron-right fs-5 text-black"></i>
+                    </span>
                 </button>
             </div>
 
 
         </div>
+    </div>
+
+    <!-- Why shop on Sattchi art -->
+    <div class="w-100 py-5" style="background-color: #F1F1F1;">
+        <div class="head">
+            <p class="fs-3 d-flex justify-content-center">Why Shop on Saatchi Arts</p>
+            <p class="fs-6 text-center justify-content-center w-100 px-3">Saatchi Art is the best place to buy artwork
+                online with confidence. Discover <br> <span class="text-decoration-underline">original paintings, fine
+                    art
+                    photography, sculpture,</span> and more from the world's <br> largest selection of original art.</p>
+        </div>
+        <div class="cardBody container-fluid">
+            <div class="d-flex justify-content-center gap-2 row">
+                <div class="card d-flex align-items-center justify-content-center py-3 col-6 col-lg-3"
+                    style="width: 18rem; height: 13rem;">
+                    <div style="width: 50px;">
+                        <img src="images/material-symbols-light--globe.svg" class="card-img-top mt-4" alt="...">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h5 class="card-title fs-6 ">Global Selection</h5>
+                        <p class="card-text fs-6 fw-light ">Explore a worldwide selection of original artwork for sale
+                            by thousands of artists.</p>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center justify-content-center py-3 col-6 col-lg-3"
+                    style="width: 18rem; height: 13rem;">
+                    <div style="width: 50px;">
+                        <img src="images/ph--smiley-thin.svg" class="card-img-top mt-2" alt="...">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="card-title fs-6 ">Satisfaction Guaranteed</h5>
+                        <p class="card-text fs-6 fw-light ">Our 14-day satisfaction guarantee allows you to buy with
+                            confidence.
+                        </p>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center justify-content-center py-3 col-6 col-lg-3"
+                    style="width: 18rem; height: 13rem;">
+                    <div style="width: 60px;">
+                        <img src="images/material-symbols-light--star-outline.svg" class="card-img-top mt-2" alt="...">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="card-title fs-6 ">Thousands of 5-star reviews</h5>
+                        <p class="card-text fs-6 fw-light ">We deliver world-class customer service to all of our art
+                            buyers.
+                        </p>
+                    </div>
+                </div>
+                <div class="card d-flex align-items-center justify-content-center py-3 col-6 col-lg-3"
+                    style="width: 18rem; height: 13rem;">
+                    <div style="width: 50px;">
+                        <img src="images/si--insights-line.svg" class="card-img-top mt-2" alt="...">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h5 class="card-title fs-6 ">Support Emerging Crisis</h5>
+                        <p class="card-text fs-6 fw-light ">We pay our artists more on every sale than other galleries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper1 -->
+    <div class="buddy">
+        <div class="d-flex w-100 align-items-center" style="background-color: #FCFBF9;">
+            <p class="fs-3 ms-5 d-flex align-items-center text-black" style="margin-top: 60px;">2025 Rising Stars</p>
+
+        </div>
+        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+            </div>
+
+            <!-- BtN Controls -->
+            <button class="carousel-control-prev rounded-pill d-flex align-items-center justify-content-center cure"
+                type="button" data-bs-target="#cardCarousel" data-bs-slide="prev"
+                style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -50px; right: 105px !important;">
+                <span class="carousel-control-prev-icon">
+                    <i class="bi bi-chevron-left fs-5 text-black"></i>
+                </span>
+            </button>
+            <button class="carousel-control-next rounded-pill cd-flex align-items-center justify-content-center cure1"
+                type="button" data-bs-target="#cardCarousel" data-bs-slide="next"
+                style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -50px; right: 55px !important;">
+                <span class="carousel-control-next-icon">
+                    <i class="bi bi-chevron-right fs-5 text-black"></i>
+                </span>
+            </button>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper py-5">
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/8352967-ETJUPIIR-7.jpg" class="card-img-top" alt="..." width="17rem !important"
+                            height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,830</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">The Man With Coke (Medium)</p>
+                            <p class="fs-6 fw-light mb-0">Vikram Kushwah, United Kingdom.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;"> Color on Paper</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">29.1 x 35.4 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10117369-XMSPCTYB-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,605</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Crying the Stars Painting</p>
+                            <p class="fs-6 fw-light mb-0">Georgia Theologou, Greece</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">39.4 x 47.2 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10250347-FTHXDAGO-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,370</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Pulse Painting</p>
+                            <p class="fs-6 fw-light mb-0">Yeong Choi, United States</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">28 x 30 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10483783-GRQOZSJB-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$13,940</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">"Submitted Thoughts" Painting</p>
+                            <p class="fs-6 fw-light mb-0">Naila Hazell, United Kingdom.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Wood.</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">37.4 x 47.2 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11046057-YMUWOWQC-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$1,140</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">The Army Lady Painting</p>
+                            <p class="fs-6 fw-light mb-0">Saida Zahidova, Azerbaijan</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Paper</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">9.8 x 9.8 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11175395-GEXGMLBA-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$7,600</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Dance of the Wolves Painting</p>
+                            <p class="fs-6 fw-light mb-0">Gela Mikava, Georgia.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">53.9 x 63 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11242715-FOEPBRHF-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$1,145</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Peacock Compulsion Painting</p>
+                            <p class="fs-6 fw-light mb-0">Yusuf Epsin, Turkey.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">17.7 x 19.7 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11249221-ZHWNEWSL-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$796</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Taraka Bao Painting</p>
+                            <p class="fs-6 fw-light mb-0">Jess Lin, United States</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Wood</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">18 x 24 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11309433-CIRGESGY-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,160</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Strayed Painting</p>
+                            <p class="fs-6 fw-light mb-0">Taras Haida, Ukraine</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on <Canvas></Canvas></p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">23.6 x 31.5 in</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination" style="position: absolute !important; bottom: 25px !important;"></div>
+        </div>
+    </div>
+
+    <!-- Swiper 2 -->
+    <div class="buddy">
+        <div class="d-flex w-100 align-items-center" style="background-color: #FCFBF9;">
+            <p class="fs-3 ms-5 d-flex align-items-center text-black" style="margin-top: 60px;">Imagined Kingdoms</p>
+
+        </div>
+        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+            </div>
+
+            <!-- BtN Controls -->
+            <button class="carousel-control-prev rounded-pill d-flex align-items-center justify-content-center cure"
+                type="button" data-bs-target="#cardCarousel" data-bs-slide="prev"
+                style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -50px; right: 105px !important;">
+                <span class="carousel-control-prev-icon">
+                    <i class="bi bi-chevron-left fs-5 text-black"></i>
+                </span>
+            </button>
+            <button class="carousel-control-next rounded-pill cd-flex align-items-center justify-content-center cure1"
+                type="button" data-bs-target="#cardCarousel" data-bs-slide="next"
+                style="background-color: white; border: 1px solid black !important; width: 40px; height: 40px; position: absolute !important; top: -50px; right: 55px !important;">
+                <span class="carousel-control-next-icon">
+                    <i class="bi bi-chevron-right fs-5 text-black"></i>
+                </span>
+            </button>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper py-5">
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/8352967-ETJUPIIR-7.jpg" class="card-img-top" alt="..." width="17rem !important"
+                            height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,830</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">The Man With Coke (Medium)</p>
+                            <p class="fs-6 fw-light mb-0">Vikram Kushwah, United Kingdom.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;"> Color on Paper</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">29.1 x 35.4 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10117369-XMSPCTYB-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,605</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Crying the Stars Painting</p>
+                            <p class="fs-6 fw-light mb-0">Georgia Theologou, Greece</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">39.4 x 47.2 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10250347-FTHXDAGO-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,370</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Pulse Painting</p>
+                            <p class="fs-6 fw-light mb-0">Yeong Choi, United States</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">28 x 30 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/10483783-GRQOZSJB-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$13,940</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">"Submitted Thoughts" Painting</p>
+                            <p class="fs-6 fw-light mb-0">Naila Hazell, United Kingdom.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Wood.</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">37.4 x 47.2 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11046057-YMUWOWQC-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$1,140</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">The Army Lady Painting</p>
+                            <p class="fs-6 fw-light mb-0">Saida Zahidova, Azerbaijan</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Paper</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">9.8 x 9.8 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11175395-GEXGMLBA-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$7,600</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Dance of the Wolves Painting</p>
+                            <p class="fs-6 fw-light mb-0">Gela Mikava, Georgia.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">53.9 x 63 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11242715-FOEPBRHF-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$1,145</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Peacock Compulsion Painting</p>
+                            <p class="fs-6 fw-light mb-0">Yusuf Epsin, Turkey.</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Canvas</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">17.7 x 19.7 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11249221-ZHWNEWSL-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$796</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Taraka Bao Painting</p>
+                            <p class="fs-6 fw-light mb-0">Jess Lin, United States</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Acrylic on Wood</p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">18 x 24 in</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem; height: 26rem;">
+                        <img src="images/11309433-CIRGESGY-7.jpg" class="card-img-top" alt="..."
+                            width="17rem !important" height="65%">
+                        <div class="card-body" style="text-align: left !important;">
+                            <div class="price d-flex align-items-center justify-content-between">
+                                <p class="fs-5 mb-0 text-black">$2,160</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <img src="images/streamline-stickies-color--love-duo.svg" width="20px" alt="">
+                                    <img src="images/gg--add.svg" width="20px" alt="">
+                                    <img src="images/solar--cart-4-bold.svg" width="20px" alt="">
+                                </div>
+                            </div>
+                            <p class="fs-6 fw-semibold mb-0" style="font-size: 2rem;">Strayed Painting</p>
+                            <p class="fs-6 fw-light mb-0">Taras Haida, Ukraine</p>
+                            <p class="fw-light mb-0" style="font-size: .9rem;">Oil on <Canvas></Canvas></p>
+                            <p class="fw-light mb-2" style="font-size: .9rem;">23.6 x 31.5 in</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination" style="position: absolute !important; bottom: 25px !important;"></div>
+        </div>
+    </div>
+
+    <!-- Art Collecting -->
+    <div class="w-100">
+        <div class="cat d-flex w-100 justify-content-center vh-auto gap-5 align-items-center py-3"
+            style="background-color: #FCFBF9;">
+            <p class="fs-4 d-flex align-items-center mb-0">Shop by Price</p>
+            <div class="d-flex gap-3 align-items-center flex-wrap justify-content-center">
+                <button class="btn bg-white py-2 px-4 button1" style="border: 1px solid black;">UNDER $500</button>
+                <button class="btn bg-white py-2 px-4 button1" style="border: 1px solid black;">$500 - $1,000</button>
+                <button class="btn bg-white py-2 px-4 button1" style="border: 1px solid black;">$1,000 - $2,000</button>
+                <button class="btn bg-white py-2 px-4 button1" style="border: 1px solid black;">$2,000 - $5,000</button>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between px-5 py-2" style="background-color: #FCFBF9;">
+            <p class="fs-4 mb-0">Art Collecting Made Simple</p>
+            <a href="" class="text-decoration-underline text-dark">VIEW ALL</a>
+        </div>
+        <div class="d-flex flex-wrap gap-5 justify-content-center py-4 px-5" style="background-color: #FCFBF9;">
+            <div class="text-center text-md-start">
+                <img src="images/Living-With-Art-Sarah-Chitsaz-cover.jpg" alt="" class="img-fluid"
+                    style="width:500px; height:auto;">
+                <p class="fs-5 mb-0">How to buy art you love</p>
+                <a href="" class="text-decoration-underline text-dark">VIEW MORE</a>
+            </div>
+
+            <div>
+                <div class="d-flex gap-2">
+                    <img src="images/how-buy-art-cover-large.jpg" alt="" class="img-fluid"
+                        style="max-width:280px; height:auto;">
+                    <div>
+                        <p class="fs-5 mb-0">How to buy art you love</p>
+                        <a href="" class="text-decoration-underline text-dark">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 mt-3">
+                    <img src="images/art-for-your-style-cover.jpg" alt="" class="img-fluid"
+                        style="max-width:280px; height:auto;">
+                    <div>
+                        <p class="fs-5 mb-0">How to buy art you love</p>
+                        <a href="" class="text-decoration-underline text-dark">VIEW MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 
@@ -1231,6 +1878,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1, // smallest screen
+            spaceBetween: 20,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: true,
+            breakpoints: {
+                576: {
+                    slidesPerView: 1, // small devices
+                },
+                768: {
+                    slidesPerView: 2, // medium devices
+                },
+                1200: {
+                    slidesPerView: 4, // large screens
+                }
+            },
+            mousewheel: {
+                forceToAxis: true, // makes scrolling only horizontal
+                sensitivity: 1, // adjust speed (higher = faster)
+            }
+
+        });
+    </script>
+
 </body>
 
 </html>
